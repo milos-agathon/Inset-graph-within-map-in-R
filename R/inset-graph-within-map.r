@@ -163,13 +163,17 @@ source("R/women_science_map.r") # load script
 map <- women_science_map()
 
 #combine
-InsetGraphMap <- function(a, aa) {
-vp <- viewport(width=0.3,height=0.85,x=0.15,y=0.5)
-png("female_researchers_1c.png", height=4200, width=4000, res=600)
-# clear current device
-grid.newpage()
-print(p)
-print(l+labs(title=""),vp=vp)
-dev.off()
-return()
+InsetGraphMap <- function(m, bp, vp) {
+  m <- map
+  bp <- boxp 
+  vp <- viewport(width=0.3, height=0.85, x=0.15, y=0.5)
+  png("female_researchers.png", height=4200, width=4000, res=600)
+  # clear current device
+  grid.newpage()
+  print(m)
+  print(bp+labs(title=""), vp=vp)
+  dev.off()
+  return()
 }
+
+InsetGraphMap()
