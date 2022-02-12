@@ -155,11 +155,13 @@ return(a)
 nd <- orderDF()
 
 # boxplot
-source("R/women_science_boxplot.r") # load script
+boxplot_url <- "https://raw.githubusercontent.com/milos-agathon/Inset-graph-within-map-in-R/main/R/women_science_boxplot.r"
+source(boxplot_url) # load script
 boxp <- women_science_boxplot()
 
 #map
-source("R/women_science_map.r") # load script
+map_url <- "https://raw.githubusercontent.com/milos-agathon/Inset-graph-within-map-in-R/main/R/women_science_map.r"
+source(map_url) # load script
 map <- women_science_map()
 
 #combine
