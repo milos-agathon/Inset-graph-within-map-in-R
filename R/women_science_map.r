@@ -13,7 +13,7 @@ women_science_map <- function(p) {
       ylim = c(b["ymin"], b["ymax"])) +
     labs(y="", subtitle="",
       x = "",
-      title="Female researchers as a % of total researchers\n(2019 or latest year available)",
+      title="Female researchers as a % of total researchers\n(2017 or latest year available)",
       caption="©2022 Milos Popovic https://milospopovic.net\nSource: UNESCO Institute for Statistics, June 2019.\nhttp://uis.unesco.org/sites/default/files/documents/fs55-women-in-science-2019-en.pdf")+
     scale_fill_manual(name= "",
       values = rev(c("grey80", "#3f1651", "#612b70", "#963586", "#cb4978", "#e9716a", "#f89f5b")),
