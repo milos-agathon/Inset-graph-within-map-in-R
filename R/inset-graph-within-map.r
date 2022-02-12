@@ -101,7 +101,6 @@ w <- makeIntervals()
 
 # 2. JOIN DATA
 #----------
-
 crsLAEA <- "+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +datum=WGS84 +units=m +no_defs"
 
 spatialJoin <- function(shp, data, sf_data) {
@@ -111,8 +110,11 @@ spatialJoin <- function(shp, data, sf_data) {
       st_as_sf() %>%
       st_transform(crs = crsLAEA) %>%
       drop_na() %>%
-
-      select(NAME_ENGL, womensci, cat, geometry)
+      select(NAME_ENGL, womensci, cat, geometry) %>%
+      mutate(NAME_ENGL = replace(NAME_ENGL, str_detect(NAME_ENGL, "Bosnia and Herzegovina"), "BIH")) %>% 
+      mutate(NAME_ENGL = replace(NAME_ENGL, str_detect(NAME_ENGL, "Russian Federation"), "Russia")) %>%  #shorten names
+      mutate(NAME_ENGL = replace(NAME_ENGL, str_detect(NAME_ENGL, "North Macedonia"), "N. Macedonia")) %>%
+      mutate(NAME_ENGL = replace(NAME_ENGL, str_detect(NAME_ENGL, "United Kingdom"), "UK"))
 return(sf_data)
 }
 
