@@ -8,7 +8,7 @@
 windowsFonts(georg = windowsFont('Georgia'))
 
 # libraries we need
-libs <- c("tidyverse", "sf", "grid", "gridExtra", "giscoR", "classInt", "cshapes")
+libs <- c("tidyverse", "sf", "grid", "gridExtra", "giscoR", "classInt")
 
 # install missing libraries
 installed_libs <- libs %in% rownames(installed.packages())
